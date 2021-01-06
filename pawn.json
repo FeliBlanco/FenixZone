@@ -1,0 +1,10 @@
+{
+	"user": "FeliBlanco",
+	"repo": "FenixZone",
+	"entry": "gamemodes/GM.pwn",
+	"output": "gamemodes/GM.amx",
+	"dependencies": [
+		"sampctl/samp-stdlib"
+	],
+	"local": true
+}
