@@ -101,6 +101,8 @@ public OnPlayerConnect(playerid)
         cache_get_value_name_int(0, "Genero", PlayerInfo[playerid][pGenero]);
         cache_get_value_name_int(0, "Skin", PlayerInfo[playerid][pSkin]);
 
+        SetPlayerScore(playerid, PlayerInfo[playerid][pNivel]);
+
         SetSpawnInfo(playerid, PlayerInfo[playerid][pSkin], NO_TEAM, PlayerInfo[playerid][pPosX], PlayerInfo[playerid][pPosY], PlayerInfo[playerid][pPosZ], 0.0, 0, 0, 0, 0, 0, 0);
         SetTimerEx("MostrarDialog", 1000, false, "i", playerid);
     }
@@ -142,7 +144,6 @@ public OnPlayerSpawn(playerid)
         SendClientMessage(playerid, -1, "{DBED15}El servidor está en constante crecimiento. Publica tus sugerencias en el foro.");
         SendClientMessage(playerid, -1, "{FFFFFF}Escribe {DBED15}/ayuda{FFFFFF} para recibir ayuda.");
         SendClientMessage(playerid, -1, "Para recibir ayuda de otros jugadores, usa {DBED15}/n {FFFFFF}({DBED15}y tu pregunta{FFFFFF}).");
-        SetPlayerScore(playerid, PlayerInfo[playerid][pNivel]);
         SetPlayerInterior(playerid, PlayerInfo[playerid][pInterior]);
         SetPlayerVirtualWorld(playerid, PlayerInfo[playerid][pVirtualWorld]);
         for(new i; i < sizeof TDLogin; ++i) TextDrawHideForPlayer(playerid, TDLogin[i]);
